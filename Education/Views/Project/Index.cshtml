@@ -1,0 +1,37 @@
+﻿@using EducationModel
+
+@model List<Project>
+<h1>Projects</h1>
+<a asp-action="Add" asp-controller="Project" class="btn btn-outline-secondary mb-2" style="background-color:#fc9b12; color:white">Add Project</a>
+<div class="table-responsive">
+    <table class="table table-secondary table-hover" style="color:black;font-weight:bold;font-size:120%"
+           border="5" bordercolor="black" align="center" id="table">
+        <thead>
+            <tr style="background-color:gray">
+                @*<th scope="col">#</th>*@
+                <th scope="col" class="text-light"> Project Name</th>
+                <th scope="col" class="text-light">Project Link</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Project project in Model)
+
+            {
+
+                <tr>
+                    <td class="table-warning text-black"><span class="h4 mb-0">@project.Project_Name</span></td>
+                    <td class="table-warning text-black"><span class="h4 mb-0">@project.Project_Link</span></td>
+                    <td class="col-sm-6 col-12 text-sm-end table-warning text-black">
+                
+                        
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+ 
+
+</div>

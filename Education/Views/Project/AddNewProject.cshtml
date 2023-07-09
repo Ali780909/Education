@@ -1,0 +1,37 @@
+﻿  
+@model ProjectModel
+<html>
+<body>
+<a asp-controller="Project" asp-action="Index">
+    <i class="fa fa-arrow-left " style="font-size:2rem"></i>
+</a>
+<div class="alert alert-success" role="alert" style="display:none;" id="Mgs">
+    <h4 class="alert-heading">Well done</h4>
+    <p>sucAlertAdd </p>
+    <hr>
+    <p class="mb-0"><a asp-controller="Project" asp-action="Index">BackToIndex</a>.</p>
+</div>
+<div class="col-10 mx-auto">
+    <div class="card shadow border-0">
+        <div class="card-body">
+            <div class="row">
+          
+                    <h1>The form autocomplete attribute</h1>
+
+                    <p>Fill in and submit the form, then reload the page, 
+                        start to fill in the form again - and see how autocomplete works.</p>
+
+                    <form asp-controller="Project" asp-action="AddNewProject" method="post">
+                        <label for="Project_Name">Project name:</label>
+                        <input type="text" id="Project_Name" name="Project_Name"><br><br>
+                        <label for="Project_Link">URL Project:</label>
+                        <input type="text" id="Project_Link" name="Project_Link"><br><br>
+                        <input type="submit" class="btn d-inline-flex btn-sm btn-warning text-black mt-5 mx-1"/>
+                    </form>
+ 
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+            </html>

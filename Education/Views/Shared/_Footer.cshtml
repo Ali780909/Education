@@ -1,0 +1,13 @@
+﻿
+@model Dictionary<string, string>
+<footer>
+    <div class="text-center">
+        <ul>
+            @foreach (var kv in Model)
+            {
+                    <li><a href="@kv.Value">@kv.Key</a></li>
+            }
+        </ul>
+        <h3>Copyrights@@ITI  - @DateTime.Now.Year.ToString()</h3>
+    </div>
+</footer>

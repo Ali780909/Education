@@ -1,0 +1,22 @@
+﻿
+@model RoleModel
+
+
+<h3 style="text-align:center;color:black; margin-top:10px;">  </h3>
+<br />
+<br />
+<br />
+
+<form asp-controller="Role" asp-action="Add" method="post">
+     
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="input-box">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class=" form-control" style="border:5px solid gray" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="input-box button">
+        <input type="Submit" value="Add">
+    </div>
+ </form>
+

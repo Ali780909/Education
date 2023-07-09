@@ -1,0 +1,82 @@
+﻿@using EducationModel
+ 
+
+ @model  List<Student>
+@{
+ViewData["Title"] = "Students";
+}
+@section style{
+    <link rel="stylesheet" href="~/Content/PagedList.css" />
+}
+
+    <h2 class="mt-5">
+        <i class="bi bi-bag-check-fill">Students</i>
+    </h2>
+
+
+    <div class="mt-4 Product">
+
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-triangle">No Students"</i>
+
+        </div>
+    }
+    else
+    {
+        <table class="table table-secondary table-hover" style="color:gray;font-weight:bold;font-size:120%"
+           border="5" bordercolor="black" align="center" id="table">
+            <thead>
+                <tr style="background-color:gray">
+                    <th scope="col">#</th>
+                    <th scope="col" class="text-light"> Student_Name</th>
+                    <th scope="col" class="text-light">SchoolName</th>
+                    <th scope="col" class="text-light">Project</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int index = 1;
+                }
+                @foreach (var student in Model.ToList<Student>())
+                {
+                    <tr class="mt-5" style="color:tomato">
+                        <th class="table-warning text-black" scope="row">@index</th>
+                        <td class="table-warning text-black">@student.Student_Name</td>
+                        <td class="table-warning text-black">@student.SchoolName</td>
+                        <td class="table-warning text-black">@student.project</td>
+                    </tr>
+
+
+         
+                <td class="table-warning text-black">
+                    <a asp-action="Edit" asp-route-id="@student.Student_ID" class="btn btn-outline-primary">
+                        <i class="bi bi-pencil">Edite Student</i>
+
+                    </a>
+                </td>
+                <td class="table-warning text-black">
+
+                    <a href="~/Product/Delete?id=@student.Student_ID" id="deletebtn" onclick="return confirm('Do you Want to delete Product :@student.Student_Name ')" class="btn btn btn-danger" class="alert alert-danger">
+                        <i class="bi bi-trash">Delete Student</i>
+
+                    </a>
+                </td>
+
+
+
+                    ++index;
+
+
+
+                }
+
+            </tbody>
+        </table>
+    }
+@*
+    @Html.PagedListPager( Model, PageIndex => Url.Action("Index", new { PageIndex }) ) ;*@
+</div>

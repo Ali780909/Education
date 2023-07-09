@@ -1,0 +1,48 @@
+﻿
+@{
+    string? sysName = "ITI  ";
+}
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/lib/twitter-bootstrap/css/bootstrap.min.css" />
+    @RenderSection("ContactUs",false);
+    <style>
+        body {
+            height: 800px;
+        }
+
+        footer {
+            margin-top: 500px;
+        }
+        .field-validation-error{
+            color:Gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                @RenderSection("Ads",false);
+            </div>
+            <div class="col-8">
+                <partial name="_Header" model="@sysName"></partial>
+                <main>
+                    @RenderBody()
+                </main>
+              
+                
+            </div>
+            <div class="col-2">
+                @RenderSection("OtherInfo", false)
+            </div>
+        </div>
+    </div>
+    <script src="~/Cotent/css/Content/lib/jquery/jquery.min.js"></script>
+    <script src="~/Cotent/css/Content/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/Cotent/css/Content/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Cotent/css/Content/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+</body>
+</html>
